@@ -5,7 +5,8 @@
 }
 
 .container{
-    width: 1150px;
+    width: var(--default-layout-width);
+    padding: 0 var(--dedault-layout-horizontal-spacer);
     display: flex;
 }
 
