@@ -1,3 +1,5 @@
+import toutesConfig from '~/config/routes'
+
 //Layouts
 import { HeaderOnly } from '~/components/Layout'
 
@@ -7,10 +9,10 @@ import Profile from '~/pages/Profile'
 import Upload from '~/pages/Upload'
 
 const publicRoutes = [
-    { path: '/', component: Home },
-    { path: '/following', component: Following },
-    { path: '/@:nickname', component: Profile },
-    { path: '/upload', component: Upload, layout: HeaderOnly },
+    { path: toutesConfig.home, component: Home },
+    { path: toutesConfig.following, component: Following },
+    { path: toutesConfig.profile, component: Profile },
+    { path: toutesConfig.upload, component: Upload, layout: HeaderOnly },
 ]
 
 const privateRoutes = [
