@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import HeadlessTippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 
-import * as request from '~/utils/request';
+import * as searchServices from '~/services/searchService';
 import styles from './Search.module.scss';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import { SearchIcon } from '~/components/Icons';
@@ -19,35 +19,27 @@ function Search() {
     const [showResult, setShowResult] = useState(true);
     const [loading, setLoading] = useState(false);
 
-    const debounced = useDebounce(searchValue, 500);
+    const debouncedValue = useDebounce(searchValue, 500);
 
     const inputRef = useRef();
 
     useEffect(() => {
-        if (!debounced.trim()) {
+        if (!debouncedValue.trim()) {
             setSearchResult([]);
             return;
         }
 
-        setLoading(true);
-
         const fetchApi = async () => {
-            try {
-                const res = await request.get('users/search', {
-                    params: {
-                        q: debounced,
-                        type: 'less',
-                    },
-                });
-                setSearchResult(res.data);
-                setLoading(false);
-            } catch (error) {
-                setLoading(false);
-            }
+            setLoading(true);
+
+            const result = await searchServices.search(debouncedValue);
+
+            setSearchResult(result);
+            setLoading(false);
         };
 
         fetchApi();
-    }, [debounced]);
+    }, [debouncedValue]);
 
     const handleClear = () => {
         setSearchValue('');
