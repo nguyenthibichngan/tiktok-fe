@@ -5,8 +5,6 @@ function GlobalStyles({ children }) {
     return children;
 }
 
-GlobalStyles.propTypes = {
-    children: PropTypes.node.isRequired,
-};
+GlobalStyles.PropTypes = Ơ;
 
 export default GlobalStyles;

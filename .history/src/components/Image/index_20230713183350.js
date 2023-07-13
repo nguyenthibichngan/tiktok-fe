@@ -24,10 +24,10 @@ const Image = forwardRef(({ src, alt, className, failback: customFallback = imag
 });
 
 Image.propTypes = {
-    src: PropTypes.string,
-    alt: PropTypes.string,
-    className: PropTypes.string,
-    failback: PropTypes.string,
-};
+    src
+alt
+className
+failback
+}
 
 export default Image;

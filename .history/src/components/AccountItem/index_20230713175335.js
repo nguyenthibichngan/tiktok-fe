@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import { ReactPropTypes } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
@@ -22,9 +22,5 @@ function AccountItem({ data }) {
         </Link>
     );
 }
-
-AccountItem.prototypes = {
-    data: PropTypes.object.isRequired,
-};
 
 export default AccountItem;

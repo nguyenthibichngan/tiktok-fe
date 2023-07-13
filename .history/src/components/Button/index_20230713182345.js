@@ -67,17 +67,17 @@ function Button({
 Button.prototype = {
     to: PropTypes.string,
     href: PropTypes.string,
-    primary: PropTypes.bool,
-    outline: PropTypes.bool,
-    text: PropTypes.bool,
-    rounded: PropTypes.bool,
-    disabled: PropTypes.bool,
-    small: PropTypes.bool,
-    large: PropTypes.bool,
-    children: PropTypes.node.isRequired,
+    primary: PropTypes.string,
+    outline: PropTypes.string,
+    text: PropTypes.string,
+    rounded: PropTypes.string,
+    disabled: PropTypes.string,
+    small: PropTypes.string,
+    large: PropTypes.string,
+    children: PropTypes.string,
     className: PropTypes.string,
-    leftIcon: PropTypes.node,
-    onClick: PropTypes.func,
+    leftIcon: PropTypes.string,
+    onClick: PropTypes.string,
 };
 
 export default Button;

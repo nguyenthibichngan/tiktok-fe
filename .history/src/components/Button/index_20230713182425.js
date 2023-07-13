@@ -76,8 +76,8 @@ Button.prototype = {
     large: PropTypes.bool,
     children: PropTypes.node.isRequired,
     className: PropTypes.string,
-    leftIcon: PropTypes.node,
-    onClick: PropTypes.func,
+    leftIcon: PropTypes.string,
+    onClick: PropTypes.string,
 };
 
 export default Button;

@@ -72,12 +72,12 @@ Button.prototype = {
     text: PropTypes.bool,
     rounded: PropTypes.bool,
     disabled: PropTypes.bool,
-    small: PropTypes.bool,
-    large: PropTypes.bool,
-    children: PropTypes.node.isRequired,
+    small: PropTypes.string,
+    large: PropTypes.string,
+    children: PropTypes.string,
     className: PropTypes.string,
-    leftIcon: PropTypes.node,
-    onClick: PropTypes.func,
+    leftIcon: PropTypes.string,
+    onClick: PropTypes.string,
 };
 
 export default Button;

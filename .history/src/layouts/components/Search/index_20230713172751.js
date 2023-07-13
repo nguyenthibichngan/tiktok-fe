@@ -59,7 +59,7 @@ function Search() {
     };
 
     return (
-        //Using a wrapper <div> tag around the reference element solves
+        //Using a wrapper <div> tag around the reference element solves 
         //this by creating a new parentNode context.
         <div>
             <HeadlessTippy
@@ -87,15 +87,15 @@ function Search() {
                         onChange={handleChange}
                         onFocus={() => setShowResult(true)}
                     />
-
+    
                     {!!searchValue && !loading && (
                         <button className={cx('clear')} onClick={handleClear}>
                             <FontAwesomeIcon icon={faCircleXmark} />
                         </button>
                     )}
-
+    
                     {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
-
+    
                     <button className={cx('search-btn')} onMouseDown={(e) => e.preventDefault()}>
                         <SearchIcon />
                     </button>

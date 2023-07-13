@@ -23,8 +23,6 @@ function AccountItem({ data }) {
     );
 }
 
-AccountItem.prototypes = {
-    data: PropTypes.object.isRequired,
-};
+AccountItem.prototypes = {};
 
 export default AccountItem;
