@@ -1,7 +1,7 @@
 @import 'normalize.css';
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
 
-:root {
+:root{
     --primary: #fe2c55;
     --black: #000;
     --white: #fff;
@@ -13,18 +13,18 @@
     --dedault-layout-horizontal-spacer: 24px;
 }
 
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
+html{
     font-size: 62.5%;
 }
 
-body {
-    font-family: 'IBM Plex Sans', TikTokFont, Arial, Tahoma, PingFangSC, sans-serif;
+body{
+    font-family: "IBM Plex Sans",TikTokFont,Arial,Tahoma,PingFangSC,sans-serif;
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
@@ -50,7 +50,7 @@ html ::-webkit-scrollbar-thumb {
 
 html *::-webkit-scrollbar-thumb {
     border-radius: 4px;
-    background-color: rgba(22, 24, 35, 0.06);
+    background-color: rgba(22, 24, 35, .06);
 }
 
 html ::-webkit-scrollbar-track {
@@ -63,33 +63,32 @@ html *::-webkit-scrollbar-track {
     background-color: rgba(0, 0, 0, 0);
 }
 
-button,
-input,
-[tabindex] {
+button, input, [tabindex] {
     outline: none;
     border: none;
 }
 
-a {
+a[href] {
     color: var(--text-color);
     text-decoration: none;
 }
 
 // Custom tippy tooltip
 body {
-    .tippy-box {
+    .tippy-box{
         font-weight: 600;
         font-size: 1.6rem;
         line-height: 2.2rem;
         background-color: rgba(84, 84, 84, 0.92);
         border-radius: 8px;
     }
-
-    .tippy-arrow {
+    
+    .tippy-arrow{
         color: rgba(84, 84, 84, 0.92);
     }
 
-    .tippy-content {
+    .tippy-content{
         padding: 8px 9px;
     }
 }
+
