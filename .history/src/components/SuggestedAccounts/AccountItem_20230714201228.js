@@ -1,10 +1,8 @@
-import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react/headless';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
-import Image from '~/components/Image';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import styles from './SuggestedAccounts.module.scss';
 import AccountPreview from './AccountPreview';
@@ -16,32 +14,28 @@ function AccountItem({ data }) {
         return (
             <div tabIndex="-1" {...props}>
                 <PopperWrapper>
-                    <AccountPreview data={data} />
+                    <AccountPreview />
                 </PopperWrapper>
             </div>
         );
     };
     return (
         // warning
-        <div>
+        <>
             <Tippy interactive delay={[800, 0]} offset={[-20, 0]} placement="bottom" render={renderPreview}>
                 <div className={cx('account-item')}>
-                    <Image className={cx('avatar')} src={data.avatar} alt={data.nickname} />
+                    <img className={cx('avatar')} src={data.avatar} alt="" />
                     <div className={cx('item-info')}>
                         <p className={cx('nickname')}>
-                            <strong>{data.nickname}</strong>
-                            {data.tick && <FontAwesomeIcon className={cx('check')} icon={faCheckCircle} />}
+                            <strong>Bichngaan</strong>
+                            <FontAwesomeIcon className={cx('check')} icon={faCheckCircle} />
                         </p>
-                        <p className={cx('username')}>{`${data.first_name} ${data.last_name}`}</p>
+                        <p className={cx('username')}>Bich Ngaan</p>
                     </div>
                 </div>
             </Tippy>
-        </div>
+        </>
     );
 }
-
-AccountItem.prototype = {
-    data: PropTypes.object.isRequired,
-};
 
 export default AccountItem;

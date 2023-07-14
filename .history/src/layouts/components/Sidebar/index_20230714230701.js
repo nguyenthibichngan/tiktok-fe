@@ -13,7 +13,7 @@ import {
     UserGroupIcon,
 } from '~/components/Icons';
 import SuggestedAccounts from '~/components/SuggestedAccounts';
-import * as userService from '~/services/userService';
+import * as userService from '~/services/userService copy';
 
 const cx = classNames.bind(styles);
 
@@ -51,7 +51,7 @@ function Sidebar() {
             </Menu>
 
             <SuggestedAccounts label="Suggested accounts" data={suggestedUsers} onSeeMore={handleSeeMore} />
-            <SuggestedAccounts label="Suggested accounts" data={suggestedUsers} onSeeMore={handleSeeMore} />
+            <SuggestedAccounts label="Following accounts" />
         </aside>
     );
 }

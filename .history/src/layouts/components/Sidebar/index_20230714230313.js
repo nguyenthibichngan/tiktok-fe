@@ -51,7 +51,7 @@ function Sidebar() {
             </Menu>
 
             <SuggestedAccounts label="Suggested accounts" data={suggestedUsers} onSeeMore={handleSeeMore} />
-            <SuggestedAccounts label="Suggested accounts" data={suggestedUsers} onSeeMore={handleSeeMore} />
+            <SuggestedAccounts label="Following accounts" />
         </aside>
     );
 }

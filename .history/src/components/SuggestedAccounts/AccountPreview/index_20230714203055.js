@@ -34,7 +34,7 @@ function AccountPreview({ data }) {
 }
 
 AccountPreview.prototype = {
-    data: PropTypes.object.isRequired,
+    data: PropTypes.stringi,
 };
 
 export default AccountPreview;

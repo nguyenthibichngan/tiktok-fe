@@ -5,7 +5,7 @@ import AccountItem from './AccountItem';
 
 const cx = classNames.bind(styles);
 
-function SuggestedAccounts({ label, data = [], onSeeMore }) {
+function SuggestedAccounts({ label, data = [], onSeeAll }) {
     return (
         <div className={cx('wrapper')}>
             <p className={cx('label')}>{label}</p>
@@ -14,8 +14,8 @@ function SuggestedAccounts({ label, data = [], onSeeMore }) {
                 <AccountItem key={account.id} data={account} />
             ))}
 
-            <p className={cx('more-btn')} onClick={onSeeMore}>
-                See more
+            <p className={cx('more-btn')} onClick={onSeeAll}>
+                See all
             </p>
         </div>
     );
@@ -24,7 +24,6 @@ function SuggestedAccounts({ label, data = [], onSeeMore }) {
 SuggestedAccounts.propTypes = {
     label: PropTypes.string.isRequired,
     data: PropTypes.array,
-    onSeeMore: PropTypes.func,
 };
 
 export default SuggestedAccounts;

@@ -26,16 +26,14 @@ function Sidebar() {
 
     useEffect(() => {
         userService
-            .getSuggested({ page, perPage: PER_PAGE })
+            .getSuggested({ page: INIT_PAGE, perPage: PER_PAGE })
             .then((data) => {
-                setSuggestedUsers((prevUsers) => [...prevUsers, ...data]);
+                setSuggestedUsers(data);
             })
             .catch((error) => console.log(error));
-    }, [page]);
+    }, []);
 
-    const handleSeeMore = () => {
-        setPage(page + 1);
-    };
+    const handleSeeAll = () => {};
 
     return (
         <aside className={cx('wrapper')}>
@@ -50,8 +48,8 @@ function Sidebar() {
                 <MenuItem title="LIVE" to={config.routes.live} icon={<LiveIcon />} activeIcon={<LiveActiveIcon />} />
             </Menu>
 
-            <SuggestedAccounts label="Suggested accounts" data={suggestedUsers} onSeeMore={handleSeeMore} />
-            <SuggestedAccounts label="Suggested accounts" data={suggestedUsers} onSeeMore={handleSeeMore} />
+            <SuggestedAccounts label="Suggested accounts" data={suggestedUsers} onSeeAll={handleSeeAll} />
+            <SuggestedAccounts label="Following accounts" />
         </aside>
     );
 }

@@ -23,7 +23,7 @@ function AccountItem({ data }) {
     };
     return (
         // warning
-        <div>
+        <>
             <Tippy interactive delay={[800, 0]} offset={[-20, 0]} placement="bottom" render={renderPreview}>
                 <div className={cx('account-item')}>
                     <Image className={cx('avatar')} src={data.avatar} alt={data.nickname} />
@@ -36,7 +36,7 @@ function AccountItem({ data }) {
                     </div>
                 </div>
             </Tippy>
-        </div>
+        </>
     );
 }
 

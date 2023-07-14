@@ -13,7 +13,9 @@ import {
     UserGroupIcon,
 } from '~/components/Icons';
 import SuggestedAccounts from '~/components/SuggestedAccounts';
+import FollowingAccounts from '~/components/FollowingAccounts';
 import * as userService from '~/services/userService';
+import * as userFollowingsService from '~/services/userFollowingsService';
 
 const cx = classNames.bind(styles);
 
@@ -23,6 +25,7 @@ const PER_PAGE = 5;
 function Sidebar() {
     const [page, setPage] = useState(INIT_PAGE);
     const [suggestedUsers, setSuggestedUsers] = useState([]);
+    const [followingUsers, setFollowingUsers] = useState([]);
 
     useEffect(() => {
         userService
@@ -36,6 +39,15 @@ function Sidebar() {
     const handleSeeMore = () => {
         setPage(page + 1);
     };
+
+    useEffect(() => {
+        userFollowingsService
+            .getFollowings({ page })
+            .then((data) => {
+                setFollowingUsers((prevUsers) => [...prevUsers, ...data]);
+            })
+            .catch((error) => console.log(error));
+    }, [page]);
 
     return (
         <aside className={cx('wrapper')}>
@@ -51,7 +63,7 @@ function Sidebar() {
             </Menu>
 
             <SuggestedAccounts label="Suggested accounts" data={suggestedUsers} onSeeMore={handleSeeMore} />
-            <SuggestedAccounts label="Suggested accounts" data={suggestedUsers} onSeeMore={handleSeeMore} />
+            <FollowingAccounts label="Following accounts" data={followingUsers} />
         </aside>
     );
 }

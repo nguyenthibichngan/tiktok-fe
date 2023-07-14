@@ -17,25 +17,17 @@ import * as userService from '~/services/userService';
 
 const cx = classNames.bind(styles);
 
-const INIT_PAGE = 1;
-const PER_PAGE = 5;
-
 function Sidebar() {
-    const [page, setPage] = useState(INIT_PAGE);
     const [suggestedUsers, setSuggestedUsers] = useState([]);
 
     useEffect(() => {
         userService
-            .getSuggested({ page, perPage: PER_PAGE })
+            .getSuggested({ page: 1, perPage: 5 })
             .then((data) => {
-                setSuggestedUsers((prevUsers) => [...prevUsers, ...data]);
+                setSuggestedUsers(data);
             })
             .catch((error) => console.log(error));
-    }, [page]);
-
-    const handleSeeMore = () => {
-        setPage(page + 1);
-    };
+    }, []);
 
     return (
         <aside className={cx('wrapper')}>
@@ -50,8 +42,8 @@ function Sidebar() {
                 <MenuItem title="LIVE" to={config.routes.live} icon={<LiveIcon />} activeIcon={<LiveActiveIcon />} />
             </Menu>
 
-            <SuggestedAccounts label="Suggested accounts" data={suggestedUsers} onSeeMore={handleSeeMore} />
-            <SuggestedAccounts label="Suggested accounts" data={suggestedUsers} onSeeMore={handleSeeMore} />
+            <SuggestedAccounts label="Suggested accounts" />
+            <SuggestedAccounts label="Following accounts" />
         </aside>
     );
 }

@@ -18,7 +18,7 @@ import * as userService from '~/services/userService';
 const cx = classNames.bind(styles);
 
 const INIT_PAGE = 1;
-const PER_PAGE = 5;
+const PER_PAGE = 10;
 
 function Sidebar() {
     const [page, setPage] = useState(INIT_PAGE);
@@ -33,7 +33,7 @@ function Sidebar() {
             .catch((error) => console.log(error));
     }, [page]);
 
-    const handleSeeMore = () => {
+    const handleSeeAll = () => {
         setPage(page + 1);
     };
 
@@ -50,8 +50,8 @@ function Sidebar() {
                 <MenuItem title="LIVE" to={config.routes.live} icon={<LiveIcon />} activeIcon={<LiveActiveIcon />} />
             </Menu>
 
-            <SuggestedAccounts label="Suggested accounts" data={suggestedUsers} onSeeMore={handleSeeMore} />
-            <SuggestedAccounts label="Suggested accounts" data={suggestedUsers} onSeeMore={handleSeeMore} />
+            <SuggestedAccounts label="Suggested accounts" data={suggestedUsers} onSeeAll={handleSeeAll} />
+            <SuggestedAccounts label="Following accounts" />
         </aside>
     );
 }

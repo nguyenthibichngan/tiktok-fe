@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './AccountPreview.module.scss';
 import Button from '~/components/Button';
@@ -21,20 +20,16 @@ function AccountPreview({ data }) {
                     <strong>{data.nickname}</strong>
                     {data.tick && <FontAwesomeIcon className={cx('check')} icon={faCheckCircle} />}
                 </p>
-                <p className={cx('username')}>{`${data.first_name} ${data.last_name}`}</p>
+                <p className={cx('username')}>{data.nickname}</p>
                 <p className={cx('analytics')}>
-                    <strong className={cx('value')}>{data.followers_count} </strong>
+                    <strong className={cx('value')}>8.2M </strong>
                     <span className={cx('babel')}>Followers</span>
-                    <strong className={cx('value')}>{data.likes_count} </strong>
+                    <strong className={cx('value')}>8.2M </strong>
                     <span className={cx('babel')}>likes</span>
                 </p>
             </div>
         </div>
     );
 }
-
-AccountPreview.prototype = {
-    data: PropTypes.object.isRequired,
-};
 
 export default AccountPreview;

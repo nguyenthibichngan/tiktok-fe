@@ -33,7 +33,7 @@ function Sidebar() {
             .catch((error) => console.log(error));
     }, [page]);
 
-    const handleSeeMore = () => {
+    const handleSeeAll = () => {
         setPage(page + 1);
     };
 
@@ -50,8 +50,8 @@ function Sidebar() {
                 <MenuItem title="LIVE" to={config.routes.live} icon={<LiveIcon />} activeIcon={<LiveActiveIcon />} />
             </Menu>
 
-            <SuggestedAccounts label="Suggested accounts" data={suggestedUsers} onSeeMore={handleSeeMore} />
-            <SuggestedAccounts label="Suggested accounts" data={suggestedUsers} onSeeMore={handleSeeMore} />
+            <SuggestedAccounts label="Suggested accounts" data={suggestedUsers} onSeeAll={handleSeeAll} />
+            <SuggestedAccounts label="Following accounts" />
         </aside>
     );
 }

@@ -13,6 +13,7 @@ import {
     UserGroupIcon,
 } from '~/components/Icons';
 import SuggestedAccounts from '~/components/SuggestedAccounts';
+import FollowingAccounts from '~/components/FollowingAccounts';
 import * as userService from '~/services/userService';
 
 const cx = classNames.bind(styles);

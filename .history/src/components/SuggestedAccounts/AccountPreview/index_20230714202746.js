@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './AccountPreview.module.scss';
 import Button from '~/components/Button';
@@ -32,9 +31,5 @@ function AccountPreview({ data }) {
         </div>
     );
 }
-
-AccountPreview.prototype = {
-    data: PropTypes.object.isRequired,
-};
 
 export default AccountPreview;

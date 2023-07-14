@@ -23,6 +23,7 @@ const PER_PAGE = 5;
 function Sidebar() {
     const [page, setPage] = useState(INIT_PAGE);
     const [suggestedUsers, setSuggestedUsers] = useState([]);
+    const [isSeeAll, setIsSeeAll] = useState();
 
     useEffect(() => {
         userService
@@ -33,8 +34,12 @@ function Sidebar() {
             .catch((error) => console.log(error));
     }, [page]);
 
-    const handleSeeMore = () => {
-        setPage(page + 1);
+    const handleSeeAll = (isSeeAll) => {
+        setIsSeeAll((prevState) => !prevState);
+        if (isSeeAll) {
+            setPage(page + 1);
+        } else {
+        }
     };
 
     return (
@@ -50,8 +55,13 @@ function Sidebar() {
                 <MenuItem title="LIVE" to={config.routes.live} icon={<LiveIcon />} activeIcon={<LiveActiveIcon />} />
             </Menu>
 
-            <SuggestedAccounts label="Suggested accounts" data={suggestedUsers} onSeeMore={handleSeeMore} />
-            <SuggestedAccounts label="Suggested accounts" data={suggestedUsers} onSeeMore={handleSeeMore} />
+            <SuggestedAccounts
+                label="Suggested accounts"
+                data={suggestedUsers}
+                isSeeAll={isSeeAll}
+                onViewChange={handleSeeAll}
+            />
+            <SuggestedAccounts label="Following accounts" />
         </aside>
     );
 }
