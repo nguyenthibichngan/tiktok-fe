@@ -1,0 +1,65 @@
+import classNames from 'classnames/bind';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import styles from './Content.module.scss';
+import Button from '~/components/Button';
+import { CommentIcon, FavoriteIcon, HeartIcon, MusicIcon, ShareIcon } from '~/components/Icons';
+import Image from '~/components/Image';
+
+const cx = classNames.bind(styles);
+
+function Content() {
+    return (
+        <div className={cx('wrapper')}>
+            <Image
+                className={cx('avatart')}
+                src="https://i.pinimg.com/236x/c9/2c/6b/c92c6bbd77a82df51758dc47460c148c.jpg"
+                atl="Bichnagnn"
+            />
+            <div className={cx('content')}>
+                <div className={cx('text')}>
+                    <span className={cx('nickname')}>
+                        <strong>Bichnagnn</strong>
+                    </span>
+                    <span className={cx('name')}>Bich Ngan</span>
+
+                    <p className={cx('description')}>Trời mưa đào ăn sẽ không ngon</p>
+                    <Button className={cx('follow-btn')} outline>
+                        Follow
+                    </Button>
+
+                    <MusicIcon className={cx('music-btn')} />
+                    <span className={cx('music')}>music hihihihihii</span>
+                </div>
+                <div className={cx('video-wrapper')}>
+                    <video
+                        className={cx('video')}
+                        loop
+                        src="https://v1.pinimg.com/videos/mc/720p/01/05/c3/0105c3f42f3e94b5fd04fc9a7bc43737.mp4"
+                    />
+                    <div className={cx('action')}>
+                        <button>
+                            <HeartIcon />
+                            <strong>4M</strong>
+                        </button>
+                        <button>
+                            <CommentIcon />
+                            <strong>4M</strong>
+                        </button>
+                        <button>
+                            <FavoriteIcon />
+                            xmlns
+                            <strong>4M</strong>
+                        </button>
+                        <button>
+                            <ShareIcon />
+                            <strong>4M</strong>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export default Content;

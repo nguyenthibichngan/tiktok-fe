@@ -1,0 +1,76 @@
+.wrapper {
+    display: flex;
+    max-width: 692px;
+}
+
+.avatart {
+    height: 56px;
+    width: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.content {
+    margin-left: 12px;
+}
+
+.text {
+    position: relative;
+}
+
+.nickname {
+    font-size: 1.8rem;
+    line-height: 24px;
+    letter-spacing: -0.028px;
+    margin-right: 4px;
+}
+
+.name {
+    font-size: 1.4rem;
+    letter-spacing: 0.093px;
+    line-height: 28px;
+}
+
+.description {
+    font-size: 1.6rem;
+    line-height: 21px;
+    letter-spacing: 0.03px;
+}
+
+.follow-btn {
+    position: absolute;
+    top: 28px;
+    right: 0;
+    height: 30px;
+    padding: 0;
+    font-size: 1.6rem;
+    line-height: 22px;
+    font-weight: 600;
+}
+
+.music-btn {
+    transform: translateY(4px);
+    margin-right: 5px;
+}
+
+.music {
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 21px;
+    letter-spacing: 0.03px;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.video-wrapper {
+    height: calc(450px + ((100vw - 768px) / 1152) * 200);
+    width: 50%;
+}
+
+.video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
